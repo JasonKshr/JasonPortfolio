@@ -282,7 +282,8 @@ app.get("/api/spotify", async (req, res) => {
 // --------------------
 // START SERVER
 // --------------------
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  console.log("running at http://127.0.0.1:3000");
+app.listen(PORT, () => {
+  console.log(`running on port ${PORT}`);
 });
