@@ -1,0 +1,156 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jason's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <a href="#top">top</a>
+
+      <div class="nav-right">
+        <a href="#aboutme">about me</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+      </div>
+    </nav>
+
+    <section id="top">
+      <h1 id="title"></h1>
+
+      <div class="photorow">
+        <div class="side-item">
+          <img src="images/uvalogo.png" alt="UVA Logo" class="uva-logo" />
+        </div>
+
+        <div class="profile-pic">
+          <img src="images/pictureofme.jpeg" alt="Photo of Jason" />
+        </div>
+
+        <div class="side-item">
+          <div id="spotify-card">
+            <p>🎧 recently listening to:</p>
+            <h3 id="spotify-song">loading...</h3>
+            <p id="spotify-artist"></p>
+            <img id="spotify-album" alt="Album cover" />
+          </div>
+        </div>
+      </div>
+
+      <p id="cool_guy"></p>
+    </section>
+
+    <section id="aboutme">
+      <h2>about me</h2>
+      <p>
+        i am computer science senior at the university of virginia. i've
+        explored a of lot classes within the subject and my favorite topics are
+        machine learning and software engineering. i've applied some of that
+        knowledge doing research at gmu regarding deep learning and its
+        application to images.
+      </p>
+      <p>
+        outside of school/professional life, you can find me climbing plastic
+        rocks -- i'm a v6 climber if you must know. other interests i have are
+        photography, hiking, cooking, and listening to obscure music
+      </p>
+
+      <div class="activity-row">
+        <div class="activity-pic">
+          <img src="images/temple.JPG" alt="Photography" />
+        </div>
+
+        <div class="activity-pic">
+          <img src="images/monkey.JPG" alt="Rock climbing" />
+        </div>
+
+        <div class="activity-pic">
+          <img src="images/guat.jpeg" alt="Guatemala" />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>projects</h2>
+      <p>work in progress ;)</p>
+    </section>
+
+    <section id="contact">
+      <h2>contact me</h2>
+
+      <div class="contact-item">
+        <strong>email:</strong>
+        <a href="mailto:jasonkshrrr@gmail.com">jasonkshrrr@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <strong>phone:</strong>
+        <span>703-814-3321</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>
+          <a href="https://www.linkedin.com/in/jason-kishore-a76131274/">
+            linkedin
+          </a>
+        </strong>
+      </div>
+
+      <div class="contact-item">
+        <strong>
+          <a href="https://github.com/jasonkshr">github</a>
+        </strong>
+      </div>
+
+      <div class="contact-item">
+        <strong>
+          <a href="https://instagram.com/jasonkshr">insta</a>
+        </strong>
+      </div>
+    </section>
+
+    <script src="spotify.js"></script>
+
+    <script>
+      const text = "hi, i'm jason kishore";
+      const title = document.getElementById("title");
+
+      let i = 0;
+
+      function typeTitle() {
+        if (i < text.length) {
+          title.textContent += text[i];
+          i++;
+          setTimeout(typeTitle, 50);
+        }
+      }
+
+      typeTitle();
+
+      const paraText =
+        "i think i'm a pretty cool guy, here's some stuff about me and projects i've worked on";
+
+      const para = document.getElementById("cool_guy");
+
+      let n = 0;
+
+      function typePara() {
+        if (n < paraText.length) {
+          para.textContent += paraText[n];
+          n++;
+          setTimeout(typePara, 25);
+        }
+      }
+
+      typePara();
+    </script>
+  </body>
+</html>
