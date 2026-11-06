@@ -58,6 +58,7 @@ nav a:hover {
     transform: translateY(-3px);
     box-shadow: 6px 6px 0 var(--accent-dark);
     text-decoration: underline;
+    text-decoration-thickness: 2px;
     text-underline-offset: 4px;
 }
 
@@ -287,6 +288,8 @@ section p {
     font-weight: 700;
 }
 
+/* GitHub button */
+
 .project-links a {
     display: inline-block;
     background: var(--accent);
@@ -297,11 +300,17 @@ section p {
     font-size: 15px;
     font-weight: 700;
     text-decoration: none;
-    transition: transform 0.2s;
+
+    box-shadow: 4px 4px 0 var(--accent);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .project-links a:hover {
     transform: translateY(-3px);
+    box-shadow: 6px 6px 0 var(--accent-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
 
 /* Contact */
