@@ -6,18 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Jason's Portfolio</title>
-
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap"
-        rel="stylesheet"
-    >
-
     <script src="spotify.js" defer></script>
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav>
         <a href="#top">top</a>
 
@@ -29,7 +22,6 @@
     </nav>
 
     <main>
-        <!-- Home -->
         <section id="top">
             <h1 id="title"></h1>
 
@@ -62,7 +54,6 @@
             <p id="cool_guy"></p>
         </section>
 
-        <!-- About -->
         <section id="aboutme">
             <h2>about me</h2>
 
@@ -97,13 +88,51 @@
             </div>
         </section>
 
-        <!-- Projects -->
         <section id="projects">
             <h2>projects</h2>
-            <p>work in progress ;)</p>
+
+            <p class="projects-intro">
+                some things i've been building.
+            </p>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-number">
+                        01 / MACHINE LEARNING
+                    </div>
+
+                    <h3>FraudMail</h3>
+
+                    <p>
+                        A phishing detection web application that
+                        analyzes email screenshots using optical
+                        character recognition (OCR) and machine learning.
+                        Built with Django, it extracts text from uploaded
+                        screenshots and uses a trained Logistic Regression
+                        classifier to identify potentially fraudulent emails.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>Scikit-learn</span>
+                        <span>Tesseract OCR</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/JasonKshr/FraudMail"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+                    </div>
+                </article>
+            </div>
         </section>
 
-        <!-- Contact -->
         <section id="contact">
             <h2>contact me</h2>
 

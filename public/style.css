@@ -19,7 +19,8 @@ body {
     margin: 0;
     background: var(--background);
     color: var(--text);
-    font-family: "Arial", Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
 }
 
 a {
@@ -32,11 +33,9 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     display: flex;
     align-items: center;
     gap: 20px;
-
     padding: 20px 40px;
     background: rgba(245, 120, 43, 0.92);
 }
@@ -44,16 +43,13 @@ nav {
 nav a {
     display: inline-block;
     padding: 5px 12px;
-
     border: 2px solid black;
     border-radius: 10px;
-
     color: black;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     text-decoration: none;
-
     box-shadow: 5px 5px 10px var(--accent);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -61,9 +57,7 @@ nav a {
 nav a:hover {
     transform: translateY(-3px);
     box-shadow: 6px 6px 0 var(--accent-dark);
-
     text-decoration: underline;
-    text-decoration-thickness: 2px;
     text-underline-offset: 4px;
 }
 
@@ -95,10 +89,8 @@ section p {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     min-height: 85vh;
     padding-top: 70px;
-
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -116,7 +108,7 @@ section p {
     margin-top: 45px;
 }
 
-/* Profile and side content */
+/* Profile */
 
 .photorow {
     display: flex;
@@ -129,7 +121,6 @@ section p {
 .side-item {
     width: 220px;
     flex-shrink: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,11 +135,9 @@ section p {
     width: 350px;
     height: 350px;
     flex-shrink: 0;
-
     border: 6px solid var(--accent);
     border-radius: 50%;
     overflow: hidden;
-
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -166,12 +155,11 @@ section p {
     width: 220px;
     text-align: center;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 #spotify-card p {
     font-size: 18px;
-    font-weight: 600;
     margin: 8px 0;
 }
 
@@ -188,11 +176,9 @@ section p {
 
 #spotify-album {
     display: none;
-
     width: 120px;
     height: 120px;
     object-fit: cover;
-
     border-radius: 10px;
     margin: 10px auto 0;
 }
@@ -219,11 +205,9 @@ section p {
     aspect-ratio: 1;
     flex: 1;
     min-width: 0;
-
     border: 6px solid var(--accent);
     border-radius: 50%;
     overflow: hidden;
-
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -238,6 +222,86 @@ section p {
 #projects {
     font-size: 25px;
     min-height: 350px;
+}
+
+.projects-intro {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 320px), 1fr)
+    );
+    gap: 30px;
+}
+
+.project-card {
+    background: #fff8ed;
+    border: 3px solid black;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 8px 8px 0 var(--accent);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 12px 12px 0 var(--accent);
+}
+
+.project-number {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a34f1c;
+}
+
+.project-card h3 {
+    font-size: 34px;
+    font-weight: 900;
+    margin: 15px 0;
+}
+
+.project-card p {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.project-tech span {
+    background: var(--background);
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-links a {
+    display: inline-block;
+    background: var(--accent);
+    color: black;
+    border: 2px solid black;
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.project-links a:hover {
+    transform: translateY(-3px);
 }
 
 /* Contact */
@@ -376,6 +440,10 @@ section p {
         flex: none;
     }
 
+    .project-card {
+        padding: 22px;
+    }
+
     .contact-item {
         flex-wrap: wrap;
     }
@@ -386,7 +454,9 @@ section p {
         scroll-behavior: auto;
     }
 
-    nav a {
+    nav a,
+    .project-card,
+    .project-links a {
         transition: none;
     }
 }
