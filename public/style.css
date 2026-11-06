@@ -1,160 +1,392 @@
-body {
-  background-color: rgb(225, 244, 224);
-  font-family: Arial, sans-serif;
+
+:root {
+    --background: rgb(225, 244, 224);
+    --accent: rgb(245, 120, 43);
+    --accent-dark: rgb(164, 83, 32);
+    --text: #111;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Oswald", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+/* Navigation */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 40px;
+    background: rgba(245, 120, 43, 0.92);
+}
+
 nav a {
-  font-size: 27px;
-  text-decoration: none;
-  color: black;
-  border: 2px solid black;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 900;
-  line-height: 1.1;
-  box-shadow: 5px 5px 10px rgb(245, 120, 43);
-  transition: 0.1s;
+    display: inline-block;
+    padding: 5px 12px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+
+    box-shadow: 5px 5px 10px var(--accent);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 nav a:hover {
-  transform: translateY(-3px);
-  box-shadow: 6px 6px 0px rgb(164, 83, 32);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0 var(--accent-dark);
 
-#top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 31px;
-  font-weight: 900;
-}
-
-#top p {
-  max-width: 700px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  padding: 20px 40px;
-
-  position: sticky;
-  top: 0;
-  background-color: rgba(245, 120, 43, 0.85);
-  z-index: 1000;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
 
 .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: auto;
 }
 
-#aboutme {
-  padding: 80px 15%;
-  font-size: 27px;
+/* Shared sections */
+
+section {
+    padding: 80px 15%;
 }
 
-#projects {
-  padding: 80px 15%;
-  font-size: 27px;
+section h2 {
+    font-size: 48px;
+    margin: 0 0 30px;
 }
 
-#contact {
-  padding: 80px 15%;
-  font-size: 27px;
+section p {
+    line-height: 1.6;
 }
 
-.uva-logo {
-  width: 150px;
-  transform: translate(-15px, 0px);
+/* Home */
+
+#top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 85vh;
+    padding-top: 70px;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
 }
 
-.activity-row {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
+#title {
+    min-height: 1.4em;
+    font-size: clamp(36px, 5vw, 65px);
+    margin: 0 0 45px;
 }
 
-.activity-pic {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 6px solid rgb(245, 120, 43);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+#cool_guy {
+    max-width: 700px;
+    min-height: 3em;
+    margin-top: 45px;
 }
 
-.activity-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* Profile and side content */
 
 .photorow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
 }
 
 .side-item {
-  width: 220px;
-  display: flex;
-  justify-content: center;
+    width: 220px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uva-logo {
+    width: 150px;
+    max-width: 100%;
 }
 
 .profile-pic {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 6px solid rgb(245, 120, 43);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+
+    border: 6px solid var(--accent);
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
 .profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.6);
-  object-position: 0% 40%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 40%;
+    transform: scale(1.6);
 }
 
-#spotify-card {
-  width: 220px;
-  text-align: center;
+/* Spotify */
 
-  font-size: 16px;
-  font-weight: normal;
+#spotify-card {
+    width: 220px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 #spotify-card p {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 8px 0;
 }
 
 #spotify-song {
-  font-size: 22px;
-  margin: 10px 0 5px;
+    font-size: 22px;
+    margin: 10px 0 5px;
+    overflow-wrap: anywhere;
 }
 
 #spotify-artist {
-  font-size: 17px;
-  margin: 5px 0 10px;
+    font-size: 17px;
+    margin: 5px 0 10px;
 }
 
 #spotify-album {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin: 10px auto 0;
+    display: none;
 
-  display: none;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+
+    border-radius: 10px;
+    margin: 10px auto 0;
+}
+
+/* About */
+
+#aboutme {
+    font-size: 25px;
+}
+
+#aboutme p {
+    margin-bottom: 25px;
+}
+
+.activity-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.activity-pic {
+    width: 300px;
+    aspect-ratio: 1;
+    flex: 1;
+    min-width: 0;
+
+    border: 6px solid var(--accent);
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+.activity-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Projects */
+
+#projects {
+    font-size: 25px;
+    min-height: 350px;
+}
+
+/* Contact */
+
+#contact {
+    font-size: 25px;
+    padding-bottom: 120px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.contact-item a:hover {
+    color: var(--accent-dark);
+}
+
+/* Tablets */
+
+@media (max-width: 1000px) {
+    section {
+        padding: 70px 8%;
+    }
+
+    .photorow {
+        gap: 20px;
+    }
+
+    .side-item {
+        width: 160px;
+    }
+
+    .profile-pic {
+        width: 280px;
+        height: 280px;
+    }
+
+    .uva-logo {
+        width: 120px;
+    }
+
+    #spotify-card {
+        width: 160px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+
+    .nav-right {
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+
+    section h2 {
+        font-size: 36px;
+    }
+
+    #top {
+        min-height: auto;
+        padding-top: 55px;
+    }
+
+    #title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .photorow {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+        order: 1;
+    }
+
+    .side-item:first-child {
+        order: 2;
+    }
+
+    .side-item:last-child {
+        order: 3;
+    }
+
+    #cool_guy {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    #aboutme,
+    #projects,
+    #contact {
+        font-size: 20px;
+    }
+
+    .activity-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .activity-pic {
+        width: min(100%, 280px);
+        flex: none;
+    }
+
+    .contact-item {
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    nav a {
+        transition: none;
+    }
 }
