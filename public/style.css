@@ -383,6 +383,25 @@ section p {
     line-height: 1.7;
 }
 
+/* FraudMail Demo */
+
+.project-demo {
+    margin: 28px 0;
+    border: 3px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0b1020;
+    box-shadow: 6px 6px 0 var(--accent);
+}
+
+.project-demo video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Technology tags */
+
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -400,7 +419,7 @@ section p {
     font-weight: 700;
 }
 
-/* Project links */
+/* GitHub button */
 
 .project-links a {
     display: inline-block;
