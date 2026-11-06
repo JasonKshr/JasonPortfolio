@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Jason's Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="spotify.js" defer></script>
 </head>
@@ -16,12 +16,14 @@
 
         <div class="nav-right">
             <a href="#aboutme">about me</a>
+            <a href="#experience">experience</a>
             <a href="#projects">projects</a>
             <a href="#contact">contact</a>
         </div>
     </nav>
 
     <main>
+        <!-- Home -->
         <section id="top">
             <h1 id="title"></h1>
 
@@ -29,7 +31,7 @@
                 <div class="side-item">
                     <img
                         src="images/uvalogo.png"
-                        alt="UVA Logo"
+                        alt="University of Virginia logo"
                         class="uva-logo"
                     >
                 </div>
@@ -37,7 +39,7 @@
                 <div class="profile-pic">
                     <img
                         src="images/pictureofme.jpeg"
-                        alt="Photo of Jason"
+                        alt="Portrait of Jason"
                     >
                 </div>
 
@@ -54,6 +56,7 @@
             <p id="cool_guy"></p>
         </section>
 
+        <!-- About Me -->
         <section id="aboutme">
             <h2>about me</h2>
 
@@ -75,19 +78,90 @@
 
             <div class="activity-row">
                 <div class="activity-pic">
-                    <img src="images/temple.JPG" alt="Photography">
+                    <img
+                        src="images/temple.JPG"
+                        alt="Photography"
+                        loading="lazy"
+                    >
                 </div>
 
                 <div class="activity-pic">
-                    <img src="images/monkey.JPG" alt="Rock climbing">
+                    <img
+                        src="images/monkey.JPG"
+                        alt="Rock climbing"
+                        loading="lazy"
+                    >
                 </div>
 
                 <div class="activity-pic">
-                    <img src="images/guat.jpeg" alt="Guatemala">
+                    <img
+                        src="images/guat.jpeg"
+                        alt="Guatemala"
+                        loading="lazy"
+                    >
                 </div>
             </div>
         </section>
 
+        <!-- Experience -->
+        <section id="experience">
+            <h2>experience</h2>
+
+            <p class="experience-intro">
+                a little bit of what i've worked on outside the classroom.
+            </p>
+
+            <article class="experience-card">
+                <div class="experience-label">
+                    RESEARCH / MACHINE LEARNING
+                </div>
+
+                <div class="experience-heading">
+                    <div>
+                        <h3>Deep Learning Research Intern</h3>
+                        <p class="experience-organization">
+                            George Mason University
+                        </p>
+                    </div>
+
+                    <span class="experience-date">
+                        Jan 2024 – Jul 2024
+                    </span>
+                </div>
+
+                <div class="experience-divider"></div>
+
+                <h4>ClassX — Automatic Labeling Tool</h4>
+
+                <p class="experience-description">
+                    Contributed to ClassX, an AI-powered platform
+                    designed to automate the classification, labeling,
+                    storage, and sharing of scientific image datasets.
+                    Originally developed for sea ice research, ClassX
+                    expanded into heliophysics, with applications
+                    across other scientific domains.
+                </p>
+
+                <p class="experience-description">
+                    Worked on deep learning and image segmentation,
+                    including model training, data augmentation,
+                    and improving classification performance.
+                    Also contributed to the application's
+                    web-based image upload and storage workflow.
+                </p>
+
+                <div class="experience-tech">
+                    <span>Python</span>
+                    <span>PyTorch</span>
+                    <span>Deep Learning</span>
+                    <span>Computer Vision</span>
+                    <span>Flask</span>
+                    <span>AWS S3</span>
+                </div>
+            </article>
+        </section>
+
+        <!-- Projects -->
         <section id="projects">
             <h2>projects</h2>
 
@@ -98,7 +172,7 @@
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-number">
-                        01 | MACHINE LEARNING
+                        01 / MACHINE LEARNING
                     </div>
 
                     <h3>FraudMail</h3>
@@ -133,6 +207,7 @@
             </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact">
             <h2>contact me</h2>
 
