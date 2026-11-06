@@ -19,7 +19,7 @@ body {
     margin: 0;
     background: var(--background);
     color: var(--text);
-    font-family: "Oswald", Arial, sans-serif;
+    font-family: "Arial", Arial, sans-serif;
 }
 
 a {
