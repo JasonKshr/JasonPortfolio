@@ -76,7 +76,7 @@ nav a:hover {
     margin-left: auto;
 }
 
-/* Projects navigation dropdown */
+/* Projects dropdown */
 
 .project-menu {
     position: relative;
@@ -158,7 +158,7 @@ nav a:hover {
     transform: none;
 }
 
-/* Project anchors */
+/* Project anchor positions */
 
 .project-card {
     scroll-margin-top: 120px;
@@ -447,7 +447,7 @@ section p {
     margin-bottom: 35px;
 }
 
-/* Vertically stacked projects */
+/* Projects stacked vertically */
 
 .projects-grid {
     display: flex;

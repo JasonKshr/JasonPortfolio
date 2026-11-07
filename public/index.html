@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,20 @@
         <div class="nav-right">
             <a href="#aboutme">about me</a>
             <a href="#experience">experience</a>
-            <a href="#projects">projects</a>
+
+            <details class="project-menu" id="project-menu">
+                <summary>
+                    projects <span class="dropdown-arrow">▾</span>
+                </summary>
+
+                <div class="project-dropdown">
+                    <a href="#projects">all projects</a>
+                    <a href="#fraudmail">FraudMail</a>
+                    <a href="#rockblaster">RockBlaster</a>
+                    <a href="#jasonchat">JasonChat</a>
+                </div>
+            </details>
+
             <a href="#contact">contact</a>
         </div>
     </nav>
@@ -146,8 +160,8 @@
                     Worked on deep learning and image segmentation,
                     including model training, data augmentation,
                     and improving classification performance.
-                    Also contributed to maintainig and developing the project's
-                    website.
+                    Also contributed to maintaining and developing
+                    the project's website.
                 </p>
 
                 <div class="experience-tech">
@@ -171,8 +185,8 @@
 
             <div class="projects-grid">
 
-                <!-- Project 1 -->
-                <article class="project-card">
+                <!-- FraudMail -->
+                <article class="project-card" id="fraudmail">
                     <div class="project-number">
                         01 | MACHINE LEARNING
                     </div>
@@ -180,7 +194,15 @@
                     <h3>FraudMail</h3>
 
                     <p>
-                        A phishing detection web application that analyzes email screenshots using optical character recognition (OCR) and machine learning. Built with Django, it extracts text from uploaded screenshots using Tesseract OCR and feeds the extracted text into a trained scikit-learn Logistic Regression classifier that predicts whether an email is potentially fraudulent.
+                        A phishing detection web application that
+                        analyzes email screenshots using optical
+                        character recognition (OCR) and machine
+                        learning. Built with Django, it extracts text
+                        from uploaded screenshots using Tesseract OCR
+                        and feeds the extracted text into a trained
+                        scikit-learn Logistic Regression classifier
+                        that predicts whether an email is potentially
+                        fraudulent.
                     </p>
 
                     <div class="project-demo">
@@ -211,22 +233,23 @@
                     </div>
                 </article>
 
-
-                <!-- Project 2 -->
-                <article class="project-card">
+                <!-- RockBlaster -->
+                <article class="project-card" id="rockblaster">
                     <div class="project-number">
                         02 | GAME DEVELOPMENT
                     </div>
 
-                    <h3>Asteroid Blaster</h3>
+                    <h3>RockBlaster</h3>
 
                     <p>
-                        A fast-paced retro arcade space shooter built in Lua
-                        using PICO-8. Players control a spaceship, fire
-                        rainbow projectiles, and destroy randomly generated
-                        asteroids with different sizes and health values.
-                        The game includes collision detection, player health,
-                        scoring system, and randomized asteroid behavior.
+                        A fast-paced retro arcade space shooter built
+                        in Lua using PICO-8. Players control a
+                        spaceship, fire rainbow projectiles, and
+                        destroy randomly generated asteroids with
+                        different sizes and health values. The game
+                        includes collision detection, player health,
+                        scoring system, and randomized asteroid
+                        behavior.
                     </p>
 
                     <div class="project-demo">
@@ -253,6 +276,41 @@
                     <div class="project-links">
                         <a
                             href="https://github.com/JasonKshr/pico8-rockblaster"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- JasonChat -->
+                <article class="project-card" id="jasonchat">
+                    <div class="project-number">
+                        03 | WEB DEVELOPMENT
+                    </div>
+
+                    <h3>JasonChat</h3>
+
+                    <p>
+                        A real-time messaging application in development
+                        using Django. The project has separate apps for
+                        user management and chat functionality. Planned
+                        features include private messaging, group chats,
+                        persistent message history, and real-time
+                        communication using Django Channels and WebSockets.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQLite</span>
+                        <span>WebSockets (planned)</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/JasonKshr/JasonChat"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -314,6 +372,23 @@
     </main>
 
     <script>
+        const projectMenu = document.getElementById("project-menu");
+
+        // Close menu after selecting a project
+        projectMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                projectMenu.open = false;
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", event => {
+            if (!projectMenu.contains(event.target)) {
+                projectMenu.open = false;
+            }
+        });
+
+        // Typing animation
         function typeText(elementId, text, speed) {
             const element = document.getElementById(elementId);
             let index = 0;
